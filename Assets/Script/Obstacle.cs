@@ -8,9 +8,11 @@ public class Obstacle : MonoBehaviour
     private Rigidbody rb;
     public float speed;
     public int random;
+    public bool puedecambiar = true;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        puedecambiar = true;
     }
 
     // Update is called once per frame
@@ -30,9 +32,14 @@ public class Obstacle : MonoBehaviour
         }
         if (collision.collider.CompareTag("Pared"))
         {
-            Debug.Log(collision.gameObject);
-            speed *= -1;
-            Debug.Log(collision.gameObject);
+            
+            
+            if (puedecambiar)
+            {
+                speed *= -1;
+            }
+            StartCoroutine(Delay(2));
+            //Debug.Log(speed);
         }
     }
     /*private void OnTriggerEnter(Collider other)
@@ -44,4 +51,10 @@ public class Obstacle : MonoBehaviour
             Debug.Log(speed);
         }
     }*/
+    public IEnumerator Delay(float d)
+    {
+        puedecambiar = false;
+        yield return new WaitForSeconds(d);
+        puedecambiar = true;
+    }
 }
