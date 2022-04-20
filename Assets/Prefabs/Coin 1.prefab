@@ -38,6 +38,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8590658529936613161}
     m_Modifications:
+    - target: {fileID: 1765498627608305357, guid: 1d999227afbf63c468e132221ca8f1c1, type: 3}
+      propertyPath: translationspeed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 6485677412552252996, guid: 1d999227afbf63c468e132221ca8f1c1, type: 3}
       propertyPath: m_Name
       value: Coin
