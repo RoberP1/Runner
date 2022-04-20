@@ -32,13 +32,14 @@ public class GraundTile : MonoBehaviour
     {
         int obstaclePotition = Random.Range(2, 5);
         Transform spawnPoint = transform.GetChild(obstaclePotition).transform;
-        Instantiate(ObstaclePrefab, spawnPoint.position, Quaternion.identity,transform);
+        GameObject temp = Instantiate(ObstaclePrefab, spawnPoint.position, Quaternion.identity,transform);
+        temp.GetComponent<Obstacle>().random = Random.Range(0, 10);
     }
 
 
     public void SpawnCoin()
     {
-        int coinToSpawn = Random.Range(MinCoinSpawn, MaxCoinSpawn);
+        int coinToSpawn = Random.Range(MinCoinSpawn, MaxCoinSpawn+1);
         for (int i = 0; i < coinToSpawn; i++)
         {
             GameObject temp = Instantiate(CoinPrefab, transform);
@@ -47,7 +48,7 @@ public class GraundTile : MonoBehaviour
     }
     public void SpawnPowerUP()
     {
-        if (Random.Range(1, 10) == 1)
+        if (Random.Range(1, 11) == 1)
         {
             int poweUpPotition = Random.Range(9, 11);
             Transform spawnPoint = transform.GetChild(poweUpPotition).transform;
