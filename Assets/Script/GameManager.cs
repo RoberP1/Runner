@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public bool PowerUpIman;
     private Timer timer;
     private MovimientoPlayer player;
+
     void Start()
     {
         PowerUpMultiplayer = false;
@@ -22,13 +23,9 @@ public class GameManager : MonoBehaviour
         player = FindObjectOfType<MovimientoPlayer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("r"))
-        {
-            Reset();
-        }
+        if (Input.GetKeyDown("r")) Reset();
     }
     public void Finish()
     {
@@ -37,30 +34,21 @@ public class GameManager : MonoBehaviour
         resetbn.gameObject.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
     }
-    public void Reset()
-    {
-        SceneManager.LoadScene(0);
-    }
+    public void Reset() => SceneManager.LoadScene(0);
     public void UpdatCoins()
     {
         coins++;
         if (PowerUpMultiplayer) coins++;
         CoinsTx.text = coins.ToString();
     }
-    public void Multiplayer()
-    {
-        StartCoroutine(MDuration(10));
-    }
+    public void Multiplayer() => StartCoroutine(MDuration(10));
     public IEnumerator MDuration(float d)
     {
         PowerUpMultiplayer = true;
         yield return new WaitForSeconds(d);
         PowerUpMultiplayer = false;
     }
-    public void Iman()
-    {
-        StartCoroutine(ImanDuration(10));
-    }
+    public void Iman() => StartCoroutine(ImanDuration(10));
     public IEnumerator ImanDuration(float d)
     {
         PowerUpIman = true;

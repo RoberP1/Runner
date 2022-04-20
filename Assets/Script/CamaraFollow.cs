@@ -6,12 +6,7 @@ public class CamaraFollow : MonoBehaviour
 {
     public Transform player;
     Vector3 offset;
-    void Start()
-    {
-        offset = transform.position - player.position;
-    }
-
-    // Update is called once per frame
+    void Start() => offset = transform.position - player.position;
     void Update()
     {
         Vector3 targetpos = player.position + offset;

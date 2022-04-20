@@ -14,14 +14,9 @@ public class Obstacle : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         puedecambiar = true;
     }
-
-    // Update is called once per frame
     void Update()
     {
-        if (random == 0)
-        {
-            rb.velocity = new Vector3(speed * Time.deltaTime, 0, 0);
-        }
+        if (random == 0) rb.velocity = new Vector3(speed * Time.deltaTime, 0, 0);
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -30,27 +25,12 @@ public class Obstacle : MonoBehaviour
             gameManager = FindObjectOfType<GameManager>();
             gameManager.Finish();
         }
-        if (collision.collider.CompareTag("Pared"))
+        if (collision.collider.CompareTag("Pared") && puedecambiar)
         {
-            
-            
-            if (puedecambiar)
-            {
                 speed *= -1;
-            }
-            StartCoroutine(Delay(2));
-            //Debug.Log(speed);
+                StartCoroutine(Delay(2));
         }
     }
-    /*private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Pared"))
-        {
-            Debug.Log(speed);
-            speed *= -1;
-            Debug.Log(speed);
-        }
-    }*/
     public IEnumerator Delay(float d)
     {
         puedecambiar = false;

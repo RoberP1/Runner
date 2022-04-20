@@ -63,10 +63,8 @@ public class GraundTile : MonoBehaviour
             1,
             Random.Range(collider.bounds.min.z, collider.bounds.max.z)
             );
-        if(point != collider.ClosestPoint(point))
-        {
-            point = GetRandomPointInCollider(collider);
-        }
+        if(point != collider.ClosestPoint(point)) point = GetRandomPointInCollider(collider);
+
         return point;
     }
     public IEnumerator Delay(float d)

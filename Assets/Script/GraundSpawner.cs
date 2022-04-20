@@ -8,10 +8,7 @@ public class GraundSpawner : MonoBehaviour
     public Vector3 nextSpawnPoint;
     void Start()
     {
-        for (int i = 0; i < 20; i++)
-        {
-            SpawnTile();
-        }
+        for (int i = 0; i < 20; i++) SpawnTile();
     }
     public void SpawnTile()
     {
