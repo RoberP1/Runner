@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8720740349957490231}
   - component: {fileID: 2700553786088669169}
   - component: {fileID: 8625110351219616917}
-  - component: {fileID: 1583810570626197194}
+  - component: {fileID: 1204593894326894115}
   m_Layer: 0
   m_Name: Obstacle
   m_TagString: Untagged
@@ -96,7 +96,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1583810570626197194
+--- !u!114 &1204593894326894115
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,3 +108,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09cee36fdd0f02d4c98b6091147ec9ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}

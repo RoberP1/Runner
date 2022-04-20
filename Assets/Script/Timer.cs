@@ -9,7 +9,6 @@ public class Timer : MonoBehaviour
 
     private float startTime;
     private string time;
-
     private bool finalizo;
     void Start()
     {
@@ -21,7 +20,7 @@ public class Timer : MonoBehaviour
     {
         if (finalizo) return;
         
-            float t = Time.time - startTime;
+            float t = Time.time - startTime ;
             string Minutos = ((int)t / 60).ToString();
             string Segundos = (t % 60).ToString("f2");
 

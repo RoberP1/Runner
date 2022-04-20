@@ -22,7 +22,8 @@ public class GraundTile : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             graundspawner.SpawnTile();
-            Destroy(gameObject);
+            StartCoroutine(Delay(2));
+            
         }
     }
 
@@ -56,5 +57,10 @@ public class GraundTile : MonoBehaviour
             point = GetRandomPointInCollider(collider);
         }
         return point;
+    }
+    public IEnumerator Delay(float d)
+    {
+        yield return new WaitForSeconds(d);
+        Destroy(gameObject);
     }
 }

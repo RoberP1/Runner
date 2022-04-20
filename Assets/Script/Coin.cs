@@ -18,7 +18,7 @@ public class Coin : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<Obstacle>())
+        if (other.gameObject.GetComponent<Obstacle>() || other.gameObject.GetComponent<Coin>() || other.gameObject.CompareTag("Pared"))
         {
             Destroy(gameObject);
         }

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    private GameManager gameManager;
+    public GameManager gameManager;
     void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
+        
     }
 
     // Update is called once per frame
@@ -19,6 +19,7 @@ public class Obstacle : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
+            gameManager = FindObjectOfType<GameManager>();
             gameManager.Finish();
         }
     }
