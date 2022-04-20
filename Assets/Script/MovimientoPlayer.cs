@@ -30,6 +30,6 @@ public class MovimientoPlayer : MonoBehaviour
     }
     public void Finish()
     {
-        speed = fowardspeed = 0;
+        speed = fowardspeed = aceleration = 0;
     }
 }
