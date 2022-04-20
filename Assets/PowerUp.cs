@@ -18,7 +18,7 @@ public class PowerUp : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<Obstacle>() || other.gameObject.GetComponent<Coin>() || other.gameObject.CompareTag("Pared"))
+        if (other.gameObject.GetComponent<Obstacle>() || other.gameObject.CompareTag("Pared"))
         {
             Destroy(gameObject);
         }
@@ -32,7 +32,7 @@ public class PowerUp : MonoBehaviour
                     gameManager.Multiplayer();
                     break;
                 case 1:
-                    gameManager.Multiplayer();
+                    gameManager.Iman();
                     break;
                 default:
                     break;

@@ -20,17 +20,15 @@ public class Coin : MonoBehaviour
         transform.Rotate(0, 0, rotationspeed * Time.deltaTime);
         if (gameManager.PowerUpIman && Vector3.Distance(player.position, transform.parent.position) < 10)
         {
-
             Vector3 mov = (player.position - transform.parent.position ).normalized;
             mov.y = 0;
             transform.parent.Translate(mov * translationspeed * Time.deltaTime);
-
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        bool spawn = other.gameObject.GetComponent<Obstacle>() || other.gameObject.GetComponent<Coin>() || other.gameObject.CompareTag("Pared");
+        bool spawn = other.gameObject.GetComponent<Obstacle>() || other.gameObject.GetComponent<Coin>() || other.gameObject.GetComponent<PowerUp>() || other.gameObject.CompareTag("Pared");
         if (!gameManager.PowerUpIman && spawn)
         {
             Destroy(gameObject);

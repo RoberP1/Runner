@@ -7,6 +7,7 @@ public class GraundTile : MonoBehaviour
     private GraundSpawner graundspawner;
     [SerializeField]private GameObject ObstaclePrefab;
     [SerializeField]private GameObject CoinPrefab;
+    [SerializeField]private GameObject[] poweups;
     public int MaxCoinSpawn;
     public int MinCoinSpawn;
 
@@ -14,6 +15,7 @@ public class GraundTile : MonoBehaviour
     {
         graundspawner = FindObjectOfType<GraundSpawner>();
         SpawnObstacle();
+        SpawnPowerUP();
         SpawnCoin();
     }
 
@@ -22,8 +24,7 @@ public class GraundTile : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             graundspawner.SpawnTile();
-            StartCoroutine(Delay(2));
-            
+            StartCoroutine(Delay(2));   
         }
     }
 
@@ -43,6 +44,15 @@ public class GraundTile : MonoBehaviour
             GameObject temp = Instantiate(CoinPrefab, transform);
             temp.transform.position = GetRandomPointInCollider(GetComponent<Collider>());
         }
+    }
+    public void SpawnPowerUP()
+    {
+        if (Random.Range(1, 10) == 1)
+        {
+            int poweUpPotition = Random.Range(9, 11);
+            Transform spawnPoint = transform.GetChild(poweUpPotition).transform;
+            GameObject temp = Instantiate(poweups[Random.Range(0, poweups.Length)],spawnPoint.position, Quaternion.identity, transform);
+        } 
     }
 
     Vector3 GetRandomPointInCollider(Collider collider)
