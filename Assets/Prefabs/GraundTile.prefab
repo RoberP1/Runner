@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObstaclePrefab: {fileID: 563072831292865982, guid: 345e315b56447e249b7e207995206314, type: 3}
-  CoinPrefab: {fileID: 6485677412552252996, guid: 1d999227afbf63c468e132221ca8f1c1, type: 3}
+  CoinPrefab: {fileID: 7548331861838012341, guid: 8beedb2c726cc594db855018e7a05e1d, type: 3}
   MaxCoinSpawn: 10
   MinCoinSpawn: 0
 --- !u!65 &1787481826282445226
