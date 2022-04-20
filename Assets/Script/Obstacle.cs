@@ -30,9 +30,9 @@ public class Obstacle : MonoBehaviour
         }
         if (collision.collider.CompareTag("Pared"))
         {
-            Debug.Log(speed);
+            Debug.Log(collision.gameObject);
             speed *= -1;
-            Debug.Log(speed);
+            Debug.Log(collision.gameObject);
         }
     }
     /*private void OnTriggerEnter(Collider other)
