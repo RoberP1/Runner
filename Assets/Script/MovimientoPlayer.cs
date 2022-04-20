@@ -22,4 +22,8 @@ public class MovimientoPlayer : MonoBehaviour
         rb.MovePosition(rb.position +fowardmove);
         rb.AddRelativeForce(new Vector3(horizontalInput, 0, 0) * speed * Time.deltaTime);
     }
+    public void Finish()
+    {
+        speed = fowardspeed = 0;
+    }
 }
